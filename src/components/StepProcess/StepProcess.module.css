@@ -1,0 +1,45 @@
+.title {
+  margin-left: 35px;
+  margin-bottom: 30px;
+}
+
+.process {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: left;
+  gap: 10vw;
+}
+.process :global(span.step_icon) span {
+  background-color: white;
+  color: #ccc;
+  margin: 0 10px;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  padding: 7px 12px;
+}
+.process :global(span.step_icon) .step_icon_one::after,
+.process :global(span.step_icon) .step_icon_two::after {
+  content: "";
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 8.5vw;
+  width: 5vw;
+  border-top: 3px solid #ccc;
+}
+.process :global(span.step_icon) label {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+.process :global(span.active) span {
+  background-color: black;
+  color: white;
+  border: 0px;
+}
+.process :global(span.active) .step_icon_one::after,
+.process :global(span.active) .step_icon_two::after {
+  border-top: 3px solid black;
+}
+.process :global(span.active) label {
+  color: black;
+}/*# sourceMappingURL=StepProcess.module.css.map */

@@ -1,0 +1,6 @@
+:global(.container) {
+  border: 1px solid red;
+  height: 200px;
+  padding: 10px;
+  width: 60%;
+}/*# sourceMappingURL=app.module.css.map */
