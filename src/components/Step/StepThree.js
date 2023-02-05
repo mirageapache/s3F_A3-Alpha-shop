@@ -1,67 +1,56 @@
 import style from './StepThree.module.css'
 
+// data
+let item = [
+  {span: 'owner_span', 
+    name: 'owner', 
+    type: 'text',  
+    title: '持卡人姓名', 
+    placeholder: 'John Doe'},
+  {span: 'card_number_span',
+    name: 'card_number', 
+    type: 'number',  
+    title: '卡號', 
+    placeholder: '1111 2222 3333 4444'},
+  {span: 'dateline_span', 
+    name: 'dateline', 
+    type: 'text',  
+    title: '有效期限', 
+    placeholder: 'MM/YY'},
+  {span: 'verify_code_span', 
+    name: 'verify_code', 
+    type: 'number',  
+    title: 'CVC / CCV', 
+    placeholder: '123'}
+]
+
+// form panel compontent
 export default function StepThree(){
   return(
     <div id="step_three" className="container">
-      <h1 className={style.title}>寄送地址</h1>
+      <h1 className={style.title}>付款資訊</h1>
       <form className={style.form_panel}>
         <div className={style.form_div}>
-          {/* 稱謂 */}
-          <span id={style.gender_span} className={style.form_item}>
-            <label form='gender_input'>
-              <p>稱謂</p>
-            </label>
-            <select id='gender_input' name="gender">
-              <option>先生</option>
-              <option>小姐</option>
-            </select>
-          </span>
-          
-          {/* 姓名 */}
-          <span id={style.name_span} className={style.form_item}>
-            <label for="name_input">
-              <p>姓名</p>
-            </label>
-            <input id='name_input' type="text" name="name" placeholder='請輸入姓名' />
-          </span>
-
-          {/* 電話 */}
-          <span id={style.phone_span} className={style.form_item}>
-            <label for="phone_input">
-              <p>電話</p>
-            </label>
-            <input id='phone_input' type="number" name="phone" placeholder='請輸入行動電話' />
-          </span>
-        
-          {/* email */}
-          <span id={style.email_span} className={style.form_item}>
-            <label for="email_input">
-              <p>Email</p>
-            </label>
-            <input id='email_input' type="email" name="email" placeholder='請輸入電子郵件' />
-          </span>
-
-          {/* 縣市 */}
-          <span id={style.city_span} className={style.form_item}>
-            <label form='city_input'>
-              <p>縣市</p>
-            </label>
-            <select id='city_input' name="city">
-              <option>請選擇縣市</option>
-              <option>台北市</option>
-            </select>
-          </span>
-
-          {/* 地址 */}
-          <span id={style.address_span} className={style.form_item}>
-            <label for="address_input">
-              <p>地址</p>
-            </label>
-            <input id='address_input' type="text" name="address" placeholder='請輸入地址' />
-          </span>
-
+          <InputItem item={item[0]} />
+          <InputItem item={item[1]} />
+          <InputItem item={item[2]} />
+          <InputItem item={item[3]} />
         </div>
       </form>
     </div>
+  )
+}
+
+// form item compontent
+function InputItem ({item}) {
+  return(
+    <>
+      <span id={item.span} className={style.form_item}>
+        <label for={item.id}>
+          <p>{item.title}</p>
+        </label>
+        <input id={item.id} type={item.type} name={item.name} placeholder={item.placeholder} />
+      </span>
+    </>
   )
 }

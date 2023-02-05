@@ -10,8 +10,8 @@ export default function App() {
   return (
     <div className="App">
       <StepProcess />
-      {/* <StepOne /> */}
-      <StepTwo />
+      <StepOne />
+      {/* <StepTwo /> */}
       {/* <StepThree /> */}
       <ProcessControl />
     </div>

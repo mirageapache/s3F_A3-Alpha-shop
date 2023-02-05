@@ -7,26 +7,23 @@
   gap: 40px;
 }
 .form_div .form_item label p {
+  font-weight: 600;
   padding-bottom: 10px;
 }
-.form_div .form_item select, .form_div .form_item input {
+.form_div .form_item input {
   width: 100%;
   font-size: 1rem;
   border-radius: 7px;
   border: 2px solid gray;
   padding: 15px;
 }
-.form_div #gender_span,
-.form_div #city_span {
-  grid-column: 1/2;
+.form_div :global(#owner_span),
+.form_div :global(#card_number_span) {
+  grid-column: 1/4;
 }
-.form_div #name_span,
-.form_div #address_span {
-  grid-column: 2/5;
-}
-.form_div #phone_span {
+.form_div :global(#dateline_span) {
   grid-column: 1/3;
 }
-.form_div #email_span {
+.form_div :global(#verify_code_span) {
   grid-column: 3/5;
 }/*# sourceMappingURL=StepThree.module.css.map */

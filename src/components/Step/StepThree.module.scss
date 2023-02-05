@@ -1,21 +1,21 @@
-.title{
+.title {
   margin-bottom: 40px;
 }
 
-.form_div{
+.form_div {
   display: grid;
   gap: 40px;
 
-  .form_item{
+  .form_item {
 
-
-    label{
-      p{
+    label {
+      p {
+        font-weight: 600;
         padding-bottom: 10px;
       }
     }
 
-    select, input{
+    input {
       width: 100%;
       font-size: 1rem;
       border-radius: 7px;
@@ -24,20 +24,17 @@
     }
   }
 
-  #gender_span,
-  #city_span{
-    grid-column: 1/2;
-  }
-  #name_span,
-  #address_span{
-    grid-column: 2/5;
-  }
-  #phone_span{
-    grid-column: 1/3;
-  }
-  #email_span{
-    grid-column: 3/5;
+  :global(#owner_span),
+  :global(#card_number_span) {
+    grid-column: 1/4;
   }
 
+  :global(#dateline_span){
+    grid-column: 1/3;
+  }
+
+  :global(#verify_code_span) {
+    grid-column: 3/5;
+  }
 
 }

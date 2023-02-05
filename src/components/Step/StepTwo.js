@@ -1,6 +1,6 @@
 import style from './StepTwo.module.css'
 
-const item = [
+let item = [
   {type: '標準運送', des: '約3~7個工作天', price: '免費', checked: true},
   {type: 'DHL貨運', des: '48小時內送達', price: '$500', checked: false}
 ]
