@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faS, fas } from "@fortawesome/free-solid-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import style from './ProcessControl.module.css'
 
@@ -14,6 +14,7 @@ export default function ProcessControl(){
           下一步
           <FontAwesomeIcon className={style.arrow_icon} icon={fas.faArrowRightLong}/>
         </button>
+        <button type="" className={style.submit_order}>確認下單</button>
       </div>
     </div>
   )

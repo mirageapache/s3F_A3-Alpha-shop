@@ -82,4 +82,9 @@ li {
 .control_div .next_step {
   background-color: var(--pink);
   color: white;
+}
+.control_div .submit_order {
+  background-color: var(--pink);
+  color: white;
+  display: none;
 }/*# sourceMappingURL=ProcessControl.module.css.map */

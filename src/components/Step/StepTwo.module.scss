@@ -1,0 +1,67 @@
+.title{
+  margin-bottom: 40px;
+}
+
+.form_div{
+  display: grid;
+  gap: 40px;
+  width:80%;
+
+  .form_item{
+    margin: 10px 0;
+    border:1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    input{
+      width: 25px;
+      margin-right: 20px;
+
+      &:checked {
+        width: 20px;
+        margin-right:25px;
+
+        &::after {
+          content: '';
+          width: 25px;
+          height: 25px;
+          margin-top: 12px;
+          margin-left: -2px;
+          border-radius: 25px;
+          background-color: white;
+          display: inline-block;
+          border: 7px solid black;
+        } 
+      }
+    }
+
+    &:has(input:checked){
+      border-color: black;
+    }
+
+    div{
+      position: relative;
+
+      p{
+        margin: 6px 0;
+
+        &:first-child {
+          font-weight: 600;
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+
+    span{
+      position: absolute;
+      right: 35px;
+    }
+
+  }
+
+
+}
