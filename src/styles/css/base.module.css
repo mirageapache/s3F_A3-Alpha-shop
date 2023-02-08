@@ -41,7 +41,6 @@
   font-size: 16px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -56,35 +55,3 @@ li {
 .container {
   margin: 0px 15px;
 }
-
-.control_div {
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-}
-.control_div button {
-  width: 25%;
-  font-size: 1rem;
-  border-radius: 10px;
-  border-color: transparent;
-  padding: 15px;
-  cursor: pointer;
-}
-.control_div button .arrow_icon {
-  margin-left: 15px;
-}
-.control_div button:hover {
-  box-shadow: 0 0 15px 3px #aaa;
-}
-.control_div .last_step {
-  visibility: hidden;
-}
-.control_div .next_step {
-  background-color: var(--pink);
-  color: white;
-}
-.control_div .submit_order {
-  background-color: var(--pink);
-  color: white;
-  display: none;
-}/*# sourceMappingURL=ProcessControl.module.css.map */

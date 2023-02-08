@@ -4,7 +4,7 @@ import StepTwo from './components/Step/StepTwo';
 import StepThree from './components/Step/StepThree';
 import ProcessControl from './components/ProcessControl/ProcessControl';
 
-import './app.module.css';
+import './styles/css/app.module.css';
 
 export default function App() {
   return (

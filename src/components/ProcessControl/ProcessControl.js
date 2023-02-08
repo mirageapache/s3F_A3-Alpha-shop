@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
-import style from './ProcessControl.module.css'
+import style from '../../styles/css/ProcessControl.module.css'
 
 export default function ProcessControl(){
   return(
