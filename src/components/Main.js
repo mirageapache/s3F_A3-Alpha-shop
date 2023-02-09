@@ -3,18 +3,25 @@ import StepOne from './Main/Step/StepOne';
 import StepTwo from './Main/Step/StepTwo';
 import StepThree from './Main/Step/StepThree';
 import ProcessControl from './Main/ProcessControl/ProcessControl';
+import Cart from './Main/Cart'
 
-
-import '../styles/css/main.module.css';
+import style from '../styles/css/main.module.css';
 
 export default function App() {
   return (
-    <div className="App">
-      <StepProcess />
-      <StepOne />
-      {/* <StepTwo /> */}
-      {/* <StepThree /> */}
-      <ProcessControl />
+    <div className={style.main_banner}>
+      <section className={style.process_section}>
+        <StepProcess />
+        <StepOne />
+        {/* <StepTwo /> */}
+        {/* <StepThree /> */}
+      </section>
+      <section className={style.cart_section}>
+        <Cart />
+      </section>
+      <section className={style.control_section}>
+        <ProcessControl />
+      </section>
     </div>
   );
 }

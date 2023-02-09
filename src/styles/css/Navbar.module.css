@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   width: 60%;
+  margin-left: 60px;
 }
 .navbar .item_div .nav_item {
   display: inline-block;
@@ -31,6 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 60px;
 }
 .navbar .icon_div a {
   font-size: 26px;

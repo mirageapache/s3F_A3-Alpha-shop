@@ -1,0 +1,57 @@
+#cart_div {
+  width: 100%;
+  margin: 10px;
+  margin-left: 60px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+}
+#cart_div .title {
+  padding: 10px 0 30px 0;
+}
+#cart_div .item_div .item {
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+#cart_div .item_div .item .item_img {
+  width: 100px;
+  margin-right: 20px;
+}
+#cart_div .item_div .item .item_info {
+  padding: 5px;
+}
+#cart_div .item_div .item .item_info .item_control {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+#cart_div .item_div .item .item_info .item_control a {
+  border-radius: 50px;
+  background-color: #eee;
+}
+#cart_div .item_div .item .item_info .item_control .add_btn {
+  padding: 1px 1px 0 1px;
+}
+#cart_div .item_div .item .item_info .item_control .dec_btn {
+  padding: 1px 1px 0 2px;
+}
+#cart_div .item_div .item .item_info .item_control p {
+  margin: 0 15px;
+}
+#cart_div .item_div .item .item_price {
+  position: absolute;
+  right: 10px;
+  margin-top: 5px;
+}
+#cart_div .cart_info .info_item {
+  position: relative;
+  display: flex;
+  padding: 20px 0 40px 0;
+  border-top: 1px solid #eee;
+}
+#cart_div .cart_info .info_item .info_content {
+  position: absolute;
+  right: 10px;
+}

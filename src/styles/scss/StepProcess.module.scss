@@ -11,17 +11,17 @@ $active_color: black;
   padding: 20px 0;
   display: flex;
   justify-content: left;
-  gap: 10vw;
+  gap: 120px;
 
   // 尚未Active 模式
   :global(span.step_icon){
-    span{
+    :global(span){
       background-color: white;
       color: $unactive_color;
       margin-right: 5px;
       border: 2px solid $unactive_color;
       border-radius: 50px;
-      padding: 7px 12px;
+      padding: 5px 10px;
     }
 
     .step_icon_one::after,
@@ -29,13 +29,13 @@ $active_color: black;
       content: "";
       position: absolute;
       margin-top: 8px;
-      margin-left: 7.8vw;
+      margin-left: 98px;
       width: 5vw;
       border-top: 3px solid $unactive_color;
     }
 
     label{
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: $unactive_color;
     }
   }

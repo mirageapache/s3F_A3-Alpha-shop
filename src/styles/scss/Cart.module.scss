@@ -1,0 +1,83 @@
+#cart_div{
+  width: 100%;
+  margin: 10px;
+  margin-left: 60px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  
+  .title{
+    padding: 10px 0 30px 0;
+  }
+
+  // 商品 section
+  .item_div{
+
+    // 每一項商品
+    .item{
+      position: relative;
+      display: flex;
+      margin-bottom: 20px;
+      padding: 10px 0; 
+
+      // 圖片
+      .item_img{
+        width: 100px;
+        margin-right: 20px;
+      }
+
+      //商品資訊
+      .item_info{
+        padding: 5px;
+        
+        .item_control{
+          display: flex;
+          align-items: center;
+          margin-top: 25px;
+
+          a{
+            border-radius: 50px;
+            background-color: #eee;
+          }
+          .add_btn{
+            padding: 1px 1px 0 1px;
+          }
+          .dec_btn{
+            padding: 1px 1px 0 2px;
+          }
+          
+          p{
+            margin: 0 15px;
+          }
+        }
+          
+      }
+
+      // 商品價格
+      .item_price{
+        position: absolute;
+        right: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  // 購物籃資訊 section
+  .cart_info{
+    
+    .info_item{
+      position: relative;
+      display: flex;
+      padding: 20px 0 40px 0;
+      border-top: 1px solid #eee;
+
+      .info_content{
+        position: absolute;
+        right: 10px;
+      }
+
+    }
+
+  }
+
+}
