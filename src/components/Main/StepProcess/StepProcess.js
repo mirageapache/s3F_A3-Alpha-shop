@@ -1,4 +1,4 @@
-import style from '../../styles/css/StepProcess.module.css'
+import style from '../../../styles/css/StepProcess.module.css'
 
 export default function StepProcess(){
   return(

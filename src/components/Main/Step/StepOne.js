@@ -1,4 +1,4 @@
-import style from '../../styles/css/StepOne.module.css'
+import style from '../../../styles/css/StepOne.module.css'
 
 export default function StepOne(){
   return(

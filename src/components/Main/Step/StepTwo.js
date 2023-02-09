@@ -1,4 +1,4 @@
-import style from '../../styles/css/StepTwo.module.css'
+import style from '../../../styles/css/StepTwo.module.css'
 
 let item = [
   {type: '標準運送', des: '約3~7個工作天', price: '免費', checked: true},
