@@ -10,10 +10,10 @@
 
 ## 使用方式 :
 
-### 下載檔案 - git clone https://github.com/mirageapache/s3F_A3-Alpha-shop.git
+### 用終端機下載專案 git clone https://github.com/mirageapache/s3F_A3-Alpha-shop.git
 
-### 進入專案資料夾內，並執行 termial
+### 進入專案資料夾內，並安裝 npm (npm install)
 
-### 輸入指令 - npm start
+### 再執行專案 - npm start
 
 ### (在瀏覽器網址輸入 'http://localhost:3000/') - 完成
