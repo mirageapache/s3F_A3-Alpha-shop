@@ -1,36 +1,41 @@
 .main_banner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.main_banner .main_content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
 @media (min-width: 748px) {
-  .main_banner {
+  .main_banner .main_content {
+    width: 80%;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
   }
 }
-@media (min-width: 980px) {
-  .main_banner .process_section {
+@media (min-width: 748px) {
+  .main_banner .main_content .process_section {
     width: 620px;
     justify-self: right;
     grid-row: 1/2;
   }
 }
-.main_banner .process_section :global(.container) {
-  padding: 10px 30px;
+.main_banner .main_content .process_section :global(.container) {
+  padding: 10px 0;
 }
-@media (min-width: 980px) {
-  .main_banner .control_section {
+@media (min-width: 748px) {
+  .main_banner .main_content .control_section {
     left: 0;
     width: 610px;
     justify-self: right;
     grid-row: 2/3;
   }
 }
-@media (min-width: 980px) {
-  .main_banner .cart_section {
+@media (min-width: 748px) {
+  .main_banner .main_content .cart_section {
     width: 500px;
-    justify-self: left;
+    justify-self: right;
     grid-row: 1/3;
     display: flex;
     align-items: end;

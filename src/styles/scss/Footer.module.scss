@@ -1,0 +1,55 @@
+@import './base.module.scss';
+
+.footer{
+  background-color: var(--footer-background-color);
+  display: flex;
+  justify-content: center;
+  
+  .footer_content{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: center;
+    width: 80%;
+    padding: 60px 0;
+
+    .brand{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item_box{
+      margin-left: 40px;
+      padding: 0 20px;
+
+      h2{
+        margin-bottom: 15px;
+      }
+
+      div{
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .footer_item{
+          color: var(--social-icon);
+          margin: 8px 0;
+        }
+      }
+    }
+
+    .subscribe{
+
+      p{
+        font-size: 1.2rem;
+        color: var(--social-icon);
+        margin: 15px 0;
+      }
+
+      a{
+        margin-right: 10px;
+      }
+    }
+
+  }
+}
+

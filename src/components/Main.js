@@ -10,18 +10,20 @@ import style from '../styles/css/main.module.css';
 export default function App() {
   return (
     <div className={style.main_banner}>
-      <section className={style.process_section}>
-        <StepProcess />
-        <StepOne />
-        {/* <StepTwo /> */}
-        {/* <StepThree /> */}
-      </section>
-      <section className={style.cart_section}>
-        <Cart />
-      </section>
-      <section className={style.control_section}>
-        <ProcessControl />
-      </section>
+      <div className={style.main_content}>
+        <section className={style.process_section}>
+          <StepProcess />
+          <StepOne />
+          {/* <StepTwo /> */}
+          {/* <StepThree /> */}
+        </section>
+        <section className={style.cart_section}>
+          <Cart />
+        </section>
+        <section className={style.control_section}>
+          <ProcessControl />
+        </section>
+      </div>
     </div>
   );
 }

@@ -19,9 +19,11 @@ const items = [
 export default function Navbar() {
   return (
     <div className={style.navbar}>
-      <NavItem items={items}/>
-      <NavBrand />
-      <NavIcon />
+      <div className={style.navbar_content}>
+        <NavItem items={items}/>
+        <NavBrand />
+        <NavIcon />
+      </div>
     </div>
   )
 }

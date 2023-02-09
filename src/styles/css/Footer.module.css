@@ -56,37 +56,43 @@ li {
   margin: 0px 15px;
 }
 
-.control_div {
-  padding: 10px 0;
+.footer {
+  background-color: var(--footer-background-color);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
-.control_div button {
-  position: relative;
-  width: 25%;
-  font-size: 1rem;
-  border-radius: 10px;
-  border-color: transparent;
-  padding: 6px 15px 10px 15px;
-  cursor: pointer;
+.footer .footer_content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: center;
+  width: 80%;
+  padding: 60px 0;
 }
-.control_div button svg {
-  position: relative;
-  top: 5px;
-  margin-left: 12px;
+.footer .footer_content .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.control_div button:hover {
-  box-shadow: 0 0 15px 3px #aaa;
+.footer .footer_content .item_box {
+  margin-left: 40px;
+  padding: 0 20px;
 }
-.control_div .last_step {
-  visibility: hidden;
+.footer .footer_content .item_box h2 {
+  margin-bottom: 15px;
 }
-.control_div .next_step {
-  background-color: var(--pink);
-  color: white;
+.footer .footer_content .item_box div {
+  display: grid;
+  grid-template-columns: 1fr;
 }
-.control_div .submit_order {
-  background-color: var(--pink);
-  color: white;
-  display: none;
+.footer .footer_content .item_box div .footer_item {
+  color: var(--social-icon);
+  margin: 8px 0;
+}
+.footer .footer_content .subscribe p {
+  font-size: 1.2rem;
+  color: var(--social-icon);
+  margin: 15px 0;
+}
+.footer .footer_content .subscribe a {
+  margin-right: 10px;
 }
