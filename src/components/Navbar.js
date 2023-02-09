@@ -1,8 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
+import { ReactComponent as SvgIconLogo } from "../sources/icons/logo.svg";
+import { ReactComponent as SvgIconToggle } from "../sources/icons/toggle.svg";
+import { ReactComponent as SvgIconSearch } from "../sources/icons/search.svg";
+import { ReactComponent as SvgIconCart } from "../sources/icons/cart.svg";
+import { ReactComponent as SvgIconMoon } from "../sources/icons/moon.svg";
+import { ReactComponent as SvgIconSun } from "../sources/icons/sun.svg";
 
-// import style from './Navbar.module.css'
 import style from '../styles/css/Navbar.module.css'
 
 // NavItem 
@@ -24,6 +26,7 @@ export default function Navbar() {
   )
 }
 
+// Item (左側)區塊
 function NavItem(prop) {
   const items = prop.items
   const NavItems = items.map(item => 
@@ -41,32 +44,34 @@ function NavItem(prop) {
   )
 }
 
+// Logo (中間)區塊
 function NavBrand() {
   return (
     <div className={style.brand}>
-      <img className={style.brand_img} src="./images/logo192.png" alt="Alpha Shop" />
-      <p className={style.brand_text}>ALPHA Shop</p>
-      
+      <a href="/">
+        <SvgIconLogo />
+      </a>
     </div>
   )
 }
 
+// Icon (右側)區塊
 function NavIcon() {
   return (
     <div className={style.icon_div}>
-      <Icon icon={fas.faMagnifyingGlass} />
-      <Icon icon={fas.faCartShopping} />
-      <Icon icon={far.faMoon} />        
+      <a className={style.search_icon} href="#">
+        <SvgIconSearch />
+      </a>
+      <a className={style.dark_icon} href="#">
+        <SvgIconMoon />
+      </a>
+      <a className={style.light_icon} href="#">
+        <SvgIconSun />
+      </a>
+      <a className={style.cart_icon} href="#">
+        <SvgIconCart />
+      </a>
     </div>
   )
 }
 
-function Icon(prop) {
-  return (
-    <>
-      <label className={style.nav_icon}>
-        <FontAwesomeIcon icon={prop.icon} />
-      </label>
-    </>
-  )
-}

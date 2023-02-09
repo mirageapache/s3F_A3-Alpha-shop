@@ -14,11 +14,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70%;
+  width: 60%;
 }
 .navbar .item_div .nav_item {
   display: inline-block;
-  font-size: 24px;
+  font-size: 1rem;
   cursor: pointer;
 }
 .navbar .brand {
@@ -27,23 +27,17 @@
   width: fit-content;
   align-items: center;
 }
-.navbar .brand .brand_img {
-  width: 40px;
-  height: 40px;
-}
-.navbar .brand .brand_text {
-  font-size: 26px;
-  font-weight: 900;
-  padding: 0 5px;
-}
 .navbar .icon_div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.navbar .icon_div .nav_icon {
+.navbar .icon_div a {
   font-size: 26px;
   padding: 5px;
   margin: 0 10px;
   cursor: pointer;
+}
+.navbar .icon_div a.light_icon {
+  display: none;
 }
