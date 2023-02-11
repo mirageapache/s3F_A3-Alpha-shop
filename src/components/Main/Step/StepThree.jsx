@@ -31,7 +31,7 @@ export default function StepThree(){
       <h1 className={style.title}>付款資訊</h1>
       <form className={style.form_panel}>
         <div className={style.form_div}>
-          {items.map(item => <InputItem item={item} /> )}
+          {items.map((item, index) => <InputItem item={item} key={index} /> )}
         </div>
       </form>
     </div>

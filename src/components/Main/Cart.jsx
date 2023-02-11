@@ -31,10 +31,10 @@ export default function Cart(){
     <div id={style.cart_div} className="container">
       <h3 className={style.title}>購物籃</h3>
       <div className={style.item_div}>
-        {datas.map(data => <GoodsItem data={data}/>)}
+        {datas.map(data => <GoodsItem key={data.id} data={data}/>)}
       </div>
       <div className={style.cart_info}>
-        {infos.map(info => <CartInfo info={info}/>)}
+        {infos.map((info, index) => <CartInfo key={index} info={info}/>)}
       </div>
     </div>
   )

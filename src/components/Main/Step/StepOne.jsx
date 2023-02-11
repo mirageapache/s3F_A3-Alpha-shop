@@ -30,7 +30,7 @@ export default function StepOne(){
           
           {/* 姓名 */}
           <span id={style.name_span} className={style.form_item}>
-            <label for="name_input">
+            <label htmlFor="name_input">
               <p>姓名</p>
             </label>
             <input id='name_input' type="text" name="name" placeholder='請輸入姓名' />
@@ -38,7 +38,7 @@ export default function StepOne(){
 
           {/* 電話 */}
           <span id={style.phone_span} className={style.form_item}>
-            <label for="phone_input">
+            <label htmlFor="phone_input">
               <p>電話</p>
             </label>
             <input id='phone_input' type="number" name="phone" placeholder='請輸入行動電話' />
@@ -46,7 +46,7 @@ export default function StepOne(){
         
           {/* email */}
           <span id={style.email_span} className={style.form_item}>
-            <label for="email_input">
+            <label htmlFor="email_input">
               <p>Email</p>
             </label>
             <input id='email_input' type="email" name="email" placeholder='請輸入電子郵件' />
@@ -54,17 +54,17 @@ export default function StepOne(){
 
           {/* 縣市 */}
           <span id={style.city_span} className={style.form_item}>
-            <label form='city_input'>
+            <label htmlFor='city_input'>
               <p>縣市</p>
             </label>
             <select id='city_input' name="city">
-              {citys.map(city => <option value={city.value}>{city.name}</option>)}
+              {citys.map((city, index) => <option value={city.value} key={index}>{city.name}</option>)}
             </select>
           </span>
 
           {/* 地址 */}
           <span id={style.address_span} className={style.form_item}>
-            <label for="address_input">
+            <label htmlFor="address_input">
               <p>地址</p>
             </label>
             <input id='address_input' type="text" name="address" placeholder='請輸入地址' />

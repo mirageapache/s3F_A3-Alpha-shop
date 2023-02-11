@@ -46,7 +46,7 @@ function FooterItem({title, item}) {
     <div className={style.item_box}>
       <h2>{title}</h2>
       <div>
-        {item.map(item => <a className={style.footer_item} href="#">{item}</a>)}
+        {item.map((item, index) => <a className={style.footer_item} href="#" key={index}>{item}</a>)}
       </div>
     </div>
   )
@@ -59,7 +59,7 @@ function Subscribe({icon}) {
     <div className={style.subscribe}>
       <h2>追蹤ALPHA Shop</h2>
       <p>+886 02123-45678</p>
-      {icon.map(icon => <a href="#">{icon}</a>)}
+      {icon.map((icon, index) => <a href="#" key={index}>{icon}</a>)}
     </div>
   )
 }

@@ -11,7 +11,7 @@ export default function StepTwo(){
       <h1 className={style.title}>運送方式</h1>
       <form className={style.form_panel}>
         <div className={style.form_div}>
-          {items.map(item => <RadioItem Item = {item} />)}
+          {items.map((item, index) => <RadioItem Item = {item} key={index} />)}
         </div>
       </form>
     </div>
