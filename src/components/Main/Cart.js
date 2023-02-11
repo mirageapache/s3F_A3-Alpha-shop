@@ -1,18 +1,29 @@
 import style from '../../styles/css/Cart.module.css'
 
-// 載入圖片 & SVG
-import product_1 from '../../sources/images/product-1.jpg'
-import product_2 from '../../sources/images/product-2.jpg'
+// 載入 SVG
 import {ReactComponent as SvgIconPlus} from '../../sources/icons/plus.svg'
 import {ReactComponent as SvgIconMinus} from '../../sources/icons/minus.svg'
 
-
 // 資料宣告
-const datas = [{title: '破壞補丁修身牛仔褲', price: '3,999', img_path: product_1, amount: '1'},
-              {title: '刷色直筒牛仔褲', price: '1,299', img_path: product_2, amount: '1'}]
+const datas = [
+  {
+    id: '1',
+    name: '貓咪罐罐',
+    img: 'https://picsum.photos/300/300?text=1',
+    price: 100,
+    quantity: 2
+  },
+  {
+    id: '2',
+    name: '貓咪干干',
+    img: 'https://picsum.photos/300/300?text=2',
+    price: 200,
+    quantity: 1
+  },
+]
 
-const infos = [{title:'運費', content:'免費'},
-              {title:'小計', content:'$5,298'}]
+
+const infos = [{title:'運費', content:'免費'}, {title:'小計', content:'$5,298'}]
 
 // 購物籃compontents
 export default function Cart(){
@@ -33,15 +44,15 @@ export default function Cart(){
 function GoodsItem ({data}) {
   return(
     <>
-      <span className={style.item}>
-        <img className={style.item_img} src={data.img_path} alt={data.title} />
+      <span className={style.item} key={data.id}>
+        <img className={style.item_img} src={data.img} alt={data.name} />
         <span className={style.item_info}>
-          <p className={style.item_title}>{data.title}</p>
+          <p className={style.item_title}>{data.name}</p>
           <span className={style.item_control}>
             <a className={style.dec_btn} href="#">
               <SvgIconMinus />  
             </a>
-            <p className={style.amount}>{data.amount}</p>
+            <p className={style.amount}>{data.quantity}</p>
             <a className={style.add_btn} href="#">
               <SvgIconPlus />
             </a>
