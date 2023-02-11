@@ -1,7 +1,7 @@
 import style from '../../../styles/css/StepThree.module.css'
 
 // data
-let item = [
+let items = [
   {span: 'owner_span', 
     name: 'owner', 
     type: 'text',  
@@ -31,10 +31,7 @@ export default function StepThree(){
       <h1 className={style.title}>付款資訊</h1>
       <form className={style.form_panel}>
         <div className={style.form_div}>
-          <InputItem item={item[0]} />
-          <InputItem item={item[1]} />
-          <InputItem item={item[2]} />
-          <InputItem item={item[3]} />
+          {items.map(item => <InputItem item={item} /> )}
         </div>
       </form>
     </div>

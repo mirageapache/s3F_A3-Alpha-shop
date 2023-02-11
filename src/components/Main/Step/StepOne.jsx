@@ -69,7 +69,6 @@ export default function StepOne(){
             </label>
             <input id='address_input' type="text" name="address" placeholder='請輸入地址' />
           </span>
-
         </div>
       </form>
     </div>
