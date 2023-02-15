@@ -27,18 +27,15 @@
   align-items: center;
   margin-top: 25px;
 }
-#cart_div .item_div .item .item_info .item_control a {
+#cart_div .item_div .item .item_info .item_control button {
+  cursor: pointer;
+  border: 0px;
   border-radius: 50px;
-  background-color: #eee;
-}
-#cart_div .item_div .item .item_info .item_control .add_btn {
-  padding: 1px 1px 0 1px;
-}
-#cart_div .item_div .item .item_info .item_control .dec_btn {
-  padding: 1px 1px 0 2px;
+  padding: 1px;
+  background-color: transparent;
 }
 #cart_div .item_div .item .item_info .item_control p {
-  margin: 0 15px;
+  margin: 0 22px;
 }
 #cart_div .item_div .item .item_price {
   position: absolute;
