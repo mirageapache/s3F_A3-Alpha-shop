@@ -40,6 +40,9 @@ function NavItem(prop) {
   return(
     <div className={style.item_div}>
       <ul>
+        <button className={style.toggle_btn}>
+          <SvgIconToggle />
+        </button>
         {NavItems}
       </ul>
     </div>

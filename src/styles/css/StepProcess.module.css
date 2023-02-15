@@ -10,6 +10,16 @@
   justify-content: left;
   gap: 120px;
 }
+@media (max-width: 860px) {
+  .process {
+    justify-content: center;
+  }
+}
+@media (max-width: 860px) {
+  .process :global(span.step_icon) {
+    position: relative;
+  }
+}
 .process :global(span.step_icon) :global(span) {
   background-color: white;
   color: #ccc;
@@ -18,18 +28,37 @@
   border-radius: 50px;
   padding: 5px 10px;
 }
+@media (max-width: 860px) {
+  .process :global(span.step_icon) :global(span) {
+    margin-left: 10px;
+  }
+}
 .process :global(span.step_icon) .step_icon_one::after,
 .process :global(span.step_icon) .step_icon_two::after {
   content: "";
   position: absolute;
   margin-top: 8px;
   margin-left: 98px;
-  width: 5vw;
+  width: 70px;
   border-top: 3px solid #ccc;
+}
+@media (max-width: 860px) {
+  .process :global(span.step_icon) .step_icon_one::after,
+  .process :global(span.step_icon) .step_icon_two::after {
+    margin-left: 40px;
+  }
 }
 .process :global(span.step_icon) label {
   font-size: 1rem;
   color: #ccc;
+}
+@media (max-width: 860px) {
+  .process :global(span.step_icon) label {
+    position: absolute;
+    width: 70px;
+    top: 30px;
+    left: -10px;
+  }
 }
 .process :global(span.active) span {
   background-color: black;

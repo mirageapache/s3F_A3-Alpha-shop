@@ -21,8 +21,14 @@ export default function StepTwo(){
 
 function RadioItem({Item}) {
   return(
-    <label for={Item.id} className={style.form_item}>
-      <input id={Item.id} type="radio" name="convey" checked={Item.checked}/>
+    <label htmlFor={Item.id} className={style.form_item}>
+      <input 
+        id={Item.id} 
+        type="radio" 
+        name="convey" 
+        checked={Item.checked}
+        onChange={e => {}}
+      />
       <div>
         <p>{Item.type}</p>
         <p>{Item.des}</p>

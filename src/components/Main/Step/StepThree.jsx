@@ -43,7 +43,7 @@ function InputItem ({item}) {
   return(
     <>
       <span id={item.span} className={style.form_item}>
-        <label for={item.id}>
+        <label htmlFor={item.id}>
           <p>{item.title}</p>
         </label>
         <input id={item.id} type={item.type} name={item.name} placeholder={item.placeholder} />

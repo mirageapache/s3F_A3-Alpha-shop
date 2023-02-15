@@ -57,36 +57,45 @@ li {
 }
 
 .control_div {
+  position: relative;
+  height: 50px;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
 }
 .control_div button {
-  position: relative;
+  position: absolute;
   width: 25%;
   font-size: 1rem;
   border-radius: 10px;
   border-color: transparent;
-  padding: 6px 15px 10px 15px;
+  padding: 10px 15px;
   cursor: pointer;
 }
 .control_div button svg {
-  position: relative;
-  top: 5px;
-  margin-left: 12px;
+  position: absolute;
 }
 .control_div button:hover {
   box-shadow: 0 0 15px 3px #aaa;
 }
 .control_div .last_step {
-  visibility: hidden;
+  padding-left: 45px;
+}
+.control_div .last_step svg {
+  left: 30px;
+  top: 8px;
 }
 .control_div .next_step {
+  right: 0;
   background-color: var(--pink);
   color: white;
+  padding-right: 45px;
+}
+.control_div .next_step svg {
+  margin-left: 12px;
 }
 .control_div .submit_order {
+  right: 0;
   background-color: var(--pink);
   color: white;
-  display: none;
 }

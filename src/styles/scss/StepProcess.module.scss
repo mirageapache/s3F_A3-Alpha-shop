@@ -13,8 +13,16 @@ $active_color: black;
   justify-content: left;
   gap: 120px;
 
+  @media (max-width: 860px) {
+    justify-content: center;
+  }
+
   // 尚未Active 模式
   :global(span.step_icon){
+    @media (max-width: 860px) {
+      position: relative;
+    }
+
     :global(span){
       background-color: white;
       color: $unactive_color;
@@ -22,6 +30,11 @@ $active_color: black;
       border: 2px solid $unactive_color;
       border-radius: 50px;
       padding: 5px 10px;
+
+      @media (max-width: 860px) {
+        margin-left: 10px;
+      }
+
     }
 
     .step_icon_one::after,
@@ -30,13 +43,25 @@ $active_color: black;
       position: absolute;
       margin-top: 8px;
       margin-left: 98px;
-      width: 5vw;
+      width: 70px;
       border-top: 3px solid $unactive_color;
+
+      @media (max-width: 860px) {
+        margin-left: 40px;
+      }
     }
 
     label{
       font-size: 1rem;
       color: $unactive_color;
+
+
+      @media (max-width: 860px) {
+        position: absolute;
+        width: 70px;
+        top: 30px;
+        left: -10px;
+      }
     }
   }
 

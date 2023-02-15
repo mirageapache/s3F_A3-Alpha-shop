@@ -20,11 +20,30 @@
         justify-content: space-between;
         align-items: center;
         width: 70%;
-      }
-    
-      .nav_item {
-        display: inline-block;
-        cursor: pointer;
+        
+        .toggle_btn{
+          background-color: transparent;
+          border: 1px solid transparent;
+          border-radius: 5px;
+          padding: 8px 8px 5px 8px ;
+          cursor: pointer;
+          &:hover{
+            border: 1px solid gray;
+          }
+
+          @media (min-width: 860px) {
+            display: none;
+          }
+        }
+
+        .nav_item {
+          display: inline-block;
+          cursor: pointer;
+
+          @media (max-width: 860px) {
+            display: none;
+          }
+        }
       }
     }
     

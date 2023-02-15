@@ -1,23 +1,23 @@
 @import './base.module.scss';
 
 .control_div{
+    position: relative;
+    height: 50px;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
 
     button{
-      position: relative;
+      position: absolute;
       width: 25%;
       font-size: 1rem;
       border-radius: 10px;
       border-color: transparent;
-      padding: 6px 15px 10px 15px;
+      padding: 10px 15px;
       cursor: pointer;
 
       svg{
-        position: relative;
-        top: 5px;
-        margin-left: 12px;
+        position: absolute;
       }
     }
     button:hover{
@@ -25,17 +25,27 @@
     }
 
     .last_step{
-      visibility: hidden;
+      padding-left: 45px;
+      svg{
+        left: 30px;
+        top: 8px;
+      }
     }
 
     .next_step{
+      right: 0;
       background-color: var(--pink);
       color: white;
+      padding-right: 45px;
+
+      svg{
+        margin-left: 12px;
+      }
     }
 
     .submit_order{
+      right: 0;
       background-color: var(--pink);
       color: white;
-      display: none;
     }
 }
