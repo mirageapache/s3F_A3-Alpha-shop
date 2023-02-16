@@ -1,4 +1,4 @@
-import style from '../../../styles/css/StepOne.module.css'
+import style from 'styles/css/StepOne.module.css'
 
 const citys = [{name: '請選擇縣市', value: ''},{name: '基隆市', value: 'KLU'},{name: '新北市', value: 'TPH'},
               {name: '臺北市', value: 'TPE'},{name: '桃園市', value: 'TYC'},{name: '新竹縣', value: 'HSH'},

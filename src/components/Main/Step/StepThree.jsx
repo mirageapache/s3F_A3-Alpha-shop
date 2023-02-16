@@ -1,4 +1,4 @@
-import style from '../../../styles/css/StepThree.module.css'
+import style from 'styles/css/StepThree.module.css'
 
 // data
 let items = [

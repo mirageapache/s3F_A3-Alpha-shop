@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // 載入css stylesheet
-import style from '../../styles/css/Cart.module.css'
+import style from 'styles/css/Cart.module.css'
 
 // 載入 SVG
 import {ReactComponent as SvgIconPlus} from '../../sources/icons/plus.svg'

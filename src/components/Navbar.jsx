@@ -5,7 +5,7 @@ import { ReactComponent as SvgIconCart } from "../sources/icons/cart.svg";
 import { ReactComponent as SvgIconMoon } from "../sources/icons/moon.svg";
 import { ReactComponent as SvgIconSun } from "../sources/icons/sun.svg";
 
-import style from '../styles/css/Navbar.module.css'
+import style from 'styles/css/Navbar.module.css'
 
 // NavItem 
 const items = [

@@ -6,7 +6,7 @@ import StepThree from './Main/Step/StepThree';
 import ProcessControl from './Main/ProcessControl/ProcessControl';
 import Cart from './Main/Cart'
 
-import style from '../styles/css/main.module.css';
+import style from 'styles/css/main.module.css';
 
 const current_index = 1
 

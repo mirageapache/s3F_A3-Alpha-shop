@@ -4,7 +4,7 @@ import { ReactComponent as SvgIconIG } from "../sources/icons/instagram.svg";
 import { ReactComponent as SvgIconWapp } from "../sources/icons/whatsapp.svg";
 
 
-import style from '../styles/css/Footer.module.css'
+import style from 'styles/css/Footer.module.css'
 
 // 客戶服務 
 const service = ['運送說明','退換貨相關','付款資訊','FAQ']

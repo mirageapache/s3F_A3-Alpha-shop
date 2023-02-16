@@ -1,5 +1,5 @@
-import { ReactComponent as SvgIconLeft } from "../../../sources/icons/left-arrow.svg";
-import { ReactComponent as SvgIconRigth } from "../../../sources/icons/right-arrow.svg";
+import { ReactComponent as SvgIconLeft } from "sources/icons/left-arrow.svg";
+import { ReactComponent as SvgIconRigth } from "sources/icons/right-arrow.svg";
 
 import style from '../../../styles/css/ProcessControl.module.css'
 
