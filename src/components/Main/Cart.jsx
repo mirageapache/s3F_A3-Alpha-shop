@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext, TotalContext } from 'components/CartContext.js'
+
 
 // 載入css stylesheet
 import style from 'styles/css/Cart.module.css'
@@ -7,82 +9,45 @@ import style from 'styles/css/Cart.module.css'
 import {ReactComponent as SvgIconPlus} from '../../sources/icons/plus.svg'
 import {ReactComponent as SvgIconMinus} from '../../sources/icons/minus.svg'
 
-// 資料宣告
-const products = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1
-  },
-]
-const convey_info = {title:'運費', content:'免費'}
-const total_price = {title:'小計', content: 400}
-
 // 購物籃compontents
 export default function Cart(){
-  const [product , setProduct] = useState(products)
-  const [convey, setConvey] = useState(convey_info)
+  const products = useContext(CartContext)
+  const [product, setProduct] = useState(products)
+
+  // 總金額(小計)
+  let total_price = useContext(TotalContext)
   const [total, setTotal] = useState(total_price)
 
-  // 減少商品數量
-  function handleDecrease (id) {
+
+  // 增減商品數量
+  function handleTotal (id, calc_mark) {
     let sum = 0 //總金額變數
 
     // 設定quantity數量
     setProduct( 
       product.map(item => {
+        // id相符 
         if(item.id === id){
-          if(item.quantity > 0){
-            let new_auqntity = item.quantity - 1 //暫存修改後的數量
-            sum += item.price * new_auqntity //加總總金額
-            // id相符 且 數量大於0才減少數量
-            return{ ...item, quantity: new_auqntity}
+          let new_quantity = item.quantity //暫存修改後total的變數
+
+          if(calc_mark === 'plus'){ //增加
+            new_quantity++
+            console.log(calc_mark)
           }
-          else{
-            sum += item.price * item.quantity
-            return{ ...item, quantity: 0 }
+          else if(calc_mark === 'minus' && item.quantity > 0){ //減少 且 數量大於0才減少數量
+            new_quantity--
+            console.log(calc_mark)
           }
+          
+          sum += item.price * new_quantity //加總總金額
+          return{ ...item, quantity: new_quantity}
         }
         sum += item.price * item.quantity
         return item
       })
     )
 
-    // 設定小計金額
-    setTotal({title: '小計', content: sum})
-  }
-
-  // 增加商品數量
-  function handleIncrease (id){
-    let sum = 0 //總金額變數
-
-    // 設定quantity數量
-    setProduct(
-      product.map(item => {
-        if(item.id === id){
-          let new_quantity = item.quantity + 1 //暫存修改後的數量
-          sum += item.price * new_quantity //加總總金額
-          // id相符則增加數量
-          return{ ...item, quantity: new_quantity }
-        }
-        else{
-          sum += item.price * item.quantity
-          return item
-        }
-      })
-    )
-
-    // 設定小計金額
-    setTotal({title: '小計', content: sum})
+    setTotal(sum) // 設定小計金額
   }
 
   return(
@@ -90,23 +55,23 @@ export default function Cart(){
       <h3 className={style.title}>購物籃</h3>
       <div className={style.item_div}>
         {product.map(data => 
-          <GoodsItem 
-            key={data.id} 
-            data={data} 
-            onIncrease={handleIncrease} //將function 傳到子元素
-            onDecrease={handleDecrease} //將function 傳到子元素
-          />)}
+          <CartContext.Provider key={data.id} value={{data, handleTotal}} >
+            <GoodsItem />
+          </CartContext.Provider>
+        )}
       </div>
       <div className={style.cart_info}>
-        <CartInfo info={convey}/> {/* 運送方式 */}
-        <CartInfo info={total}/> {/* 小計 */}
+        <CartInfo title='運費' content='免費' /> {/* 運送方式 */}
+        <CartInfo title='小計' content={total} /> {/* 小計 */}
       </div>
     </div>
   )
 }
 
 // 商品資訊 component
-function GoodsItem ({data, onIncrease, onDecrease}) {
+function GoodsItem () {
+  const {data, handleTotal} = useContext(CartContext)
+
   return(
     <>
       <span className={style.item} key={data.id}>
@@ -114,11 +79,11 @@ function GoodsItem ({data, onIncrease, onDecrease}) {
         <span className={style.item_info}>
           <p className={style.item_title}>{data.name}</p>
           <span className={style.item_control}>
-            <button className={style.dec_btn} onClick={() => {onDecrease(data.id)}}> {/*設定onDecrease()*/}
+            <button className={style.dec_btn} onClick={() => {handleTotal(data.id, 'minus')}}> {/*handleTotal(減少)*/}
               <SvgIconMinus />  
             </button>
             <p className={style.amount}>{data.quantity}</p>
-            <button className={style.add_btn} onClick={() => {onIncrease(data.id)}}> {/*設定onIncrease()*/}
+            <button className={style.add_btn} onClick={() => {handleTotal(data.id, 'plus')}}> {/*handleTotal(增加)*/}
               <SvgIconPlus />
             </button>
           </span>
@@ -130,12 +95,12 @@ function GoodsItem ({data, onIncrease, onDecrease}) {
 }
 
 // 購物車資訊 component
-function CartInfo ({info}) {
+function CartInfo ({title, content}) {
   return(
     <>
       <span className={style.info_item}>
-        <p className={style.info_title}>{info.title}</p>
-        <p className={style.info_content}>{info.content > 0 && '$ '}{info.content}</p>
+        <p className={style.info_title}>{title}</p>
+        <p className={style.info_content}>{content > 0 && '$ '}{content}</p>
       </span>
     </>
   )
