@@ -17,6 +17,12 @@
   border: 2px solid gray;
   padding: 15px;
 }
+.form_div .form_item ::-moz-placeholder {
+  color: #aaa;
+}
+.form_div .form_item ::placeholder {
+  color: #aaa;
+}
 .form_div :global(#owner_span),
 .form_div :global(#card_number_span) {
   grid-column: 1/4;

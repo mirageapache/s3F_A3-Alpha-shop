@@ -1,6 +1,5 @@
 import { createContext } from "react";
 
-
 export const products = [
   {
     id: '1',
@@ -19,11 +18,10 @@ export const products = [
 ]
 
 // 總金額(小計)
-let total_price = 0
+export let total_price = 0
 products.forEach(item => {
   total_price += item.price * item.quantity
 })
 
-export const CartContext = createContext(products)
-export const TotalContext =  createContext(total_price)
+export const CartContext = createContext([products, total_price])
 

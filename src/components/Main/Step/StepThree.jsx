@@ -1,37 +1,33 @@
 import style from 'styles/css/StepThree.module.css'
-
-// data
-let items = [
-  {span: 'owner_span', 
-    name: 'owner', 
-    type: 'text',  
-    title: '持卡人姓名', 
-    placeholder: 'John Doe'},
-  {span: 'card_number_span',
-    name: 'card_number', 
-    type: 'number',  
-    title: '卡號', 
-    placeholder: '1111 2222 3333 4444'},
-  {span: 'dateline_span', 
-    name: 'dateline', 
-    type: 'text',  
-    title: '有效期限', 
-    placeholder: 'MM/YY'},
-  {span: 'verify_code_span', 
-    name: 'verify_code', 
-    type: 'number',  
-    title: 'CVC / CCV', 
-    placeholder: '123'}
-]
+import { useContext } from 'react'
+import { FormContext } from 'components/FormContext.js'
 
 // form panel compontent
 export default function StepThree(){
+  // 透過useContext 取的資料
+  const [form_data, setInput] = useContext(FormContext)
+    
+  function handleInput(id, new_value) {
+    // 更新input value
+    const new_data = form_data.map(data => {
+        if(id === data.id){
+          return{...data, value: new_value}
+        }
+        return data
+      })
+    setInput(new_data)
+  }
+
   return(
     <div id="step_three" className="container">
       <h1 className={style.title}>付款資訊</h1>
       <form className={style.form_panel}>
         <div className={style.form_div}>
-          {items.map((item, index) => <InputItem item={item} key={index} /> )}
+          {form_data.map(data => 
+            <FormContext.Provider key={data.id} value={{data, handleInput}}>
+              <InputItem />
+            </FormContext.Provider>
+          )}
         </div>
       </form>
     </div>
@@ -39,15 +35,25 @@ export default function StepThree(){
 }
 
 // form item compontent
-function InputItem ({item}) {
+function InputItem () {
+  const {data, handleInput} = useContext(FormContext)
+
   return(
     <>
-      <span id={item.span} className={style.form_item}>
-        <label htmlFor={item.id}>
-          <p>{item.title}</p>
+      <span id={data.span} className={style.form_item}>
+        <label htmlFor={data.id}>
+          <p>{data.title}</p>
         </label>
-        <input id={item.id} type={item.type} name={item.name} placeholder={item.placeholder} />
+        <input 
+          id={data.id} 
+          value={data.value}
+          onChange={(e) => {handleInput(data.id, e.target.value)}} 
+          type={data.type} 
+          name={data.name} 
+          placeholder={data.placeholder} />
       </span>
     </>
   )
+ 
+
 }

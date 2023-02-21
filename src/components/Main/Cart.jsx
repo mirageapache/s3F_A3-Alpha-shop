@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react'
-import { CartContext, TotalContext } from 'components/CartContext.js'
+import { useContext } from 'react'
+import { CartContext } from 'components/CartContext.js'
 
 
 // 載入css stylesheet
@@ -11,16 +11,10 @@ import {ReactComponent as SvgIconMinus} from '../../sources/icons/minus.svg'
 
 // 購物籃compontents
 export default function Cart(){
-  const products = useContext(CartContext)
-  const [product, setProduct] = useState(products)
-
-  // 總金額(小計)
-  let total_price = useContext(TotalContext)
-  const [total, setTotal] = useState(total_price)
-
+  const [product, setProduct, total, setTotal] = useContext(CartContext) //購物車商品資料
 
   // 增減商品數量
-  function handleTotal (id, calc_mark) {
+  function handleTotal(id, calc_mark) {
     let sum = 0 //總金額變數
 
     // 設定quantity數量
@@ -29,15 +23,10 @@ export default function Cart(){
         // id相符 
         if(item.id === id){
           let new_quantity = item.quantity //暫存修改後total的變數
-
-          if(calc_mark === 'plus'){ //增加
-            new_quantity++
-            console.log(calc_mark)
-          }
-          else if(calc_mark === 'minus' && item.quantity > 0){ //減少 且 數量大於0才減少數量
-            new_quantity--
-            console.log(calc_mark)
-          }
+          //增加
+          if(calc_mark === 'plus'){ new_quantity++ }
+          //減少 且 數量大於0才減少數量
+          else if(calc_mark === 'minus' && item.quantity > 0){ new_quantity-- }
           
           sum += item.price * new_quantity //加總總金額
           return{ ...item, quantity: new_quantity}

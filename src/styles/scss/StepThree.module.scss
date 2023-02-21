@@ -22,6 +22,9 @@
       border: 2px solid gray;
       padding: 15px;
     }
+    ::placeholder{
+      color:#aaa;
+    }
   }
 
   :global(#owner_span),
